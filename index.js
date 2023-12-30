@@ -108,7 +108,7 @@ for (let i = 0; i < finances.length; i++) {
  * Calculation to work out the average changes in profit/loss.
 *****/
 
-var difference = 0; //Initialise variable to ba 0.
+var difference = 0; //Initialise variable to be 0.
 
 for (let i = 0; i < finances.length; i++) {
   var balance = finances[i][1]; // Initialise balance to get current month's value.
