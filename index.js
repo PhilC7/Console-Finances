@@ -94,11 +94,6 @@ var finances = [
 let totalMonths; //Initialise total months variable.
 let months = 0; //Set months to start at 0
 for (let i = 0; i <= finances.length; i++) {
-
   totalMonths = months++;
 }
 console.log(`Total months: ${totalMonths}`);
-
-
-//Access to array within array
-console.log(finances[5][1]);
