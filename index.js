@@ -92,14 +92,21 @@ var finances = [
  * Calculation to work out how many months there are.
 *****/
 //Create variable to show total months using the arrays length.
-let totalMonths = finances.length;
+var totalMonths = finances.length;
 
 /*****
  * Calculation to work out the net total of Profit/Losses.
 *****/
+var profit = 0; //Initalise variable for profit/loss, set to 0.
+
+//Loop through array selecting only the profit/loss(index 1) and adding it to the profit variable.
+for (let i = 0; i < finances.length; i++) {
+  profit += finances[i][1];
+}
 
 /*****
  * Output of final analysis.
 *****/
 console.log("Financial Analysis\n----------------");
 console.log(`Total months: ${totalMonths}`);
+console.log(`Total: $${profit}`);
