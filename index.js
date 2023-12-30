@@ -123,12 +123,47 @@ for (let i = 0; i < finances.length; i++) {
 
 var average = difference / (totalMonths - 1) // Calculation for the average profit/loss.
 
+/*****
+ * Calculation to work out greatest increase and decrease in profit/losses.
+*****/
 
+let increase = 0; //Set increase to start from 0
+let bestMonth = 0; //Set best month to start from 0
+
+let decrease = 0; //Set decrease to start from 0
+let worstMonth = 0; //Set worst month to start from 0
+
+//Loop through finances array calculating the differences between each month.
+for (let i = 1; i < finances.length; i++) {
+  let monthlyChange = finances[i][1] - finances[i - 1][1];
+
+  //If statement for the greatest increase
+  if (monthlyChange > increase) {
+    increase = monthlyChange;
+    bestMonth = finances[i][0];
+  }
+
+  //If statement for the greatest decrease
+  if (monthlyChange < decrease) {
+    decrease = monthlyChange;
+    worstMonth = finances[i][0];
+  }
+}
 
 /*****
  * Output of final analysis.
+ * Should look like the following:
+    Financial Analysis 
+    ----------------
+    Total Months: 86
+    Total: $38382578
+    Average Change: -2315.12
+    Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
+    Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
 *****/
 console.log("Financial Analysis\n----------------");
 console.log(`Total months: ${totalMonths}`);
 console.log(`Total: $${profit}`);
 console.log('Average Change: $' + average.toFixed(2)); //Set to 2 decimal places using the 'toFixed(2)' method. 
+console.log(`Greatest Increase in Profit/Losses: ${bestMonth} (${increase})`);
+console.log(`Greatest Decrease in Profit/Losses: ${worstMonth} (${decrease})`);
