@@ -3,12 +3,17 @@ Console Finances
 1 - Figure out the total months included in the dataset.
 
 2 - Work out the net total of 'Profit/Losses' over the entire period.
-    i - Access 
-    ii - Add total profit.
+    i - Add total profit.
     ii - minus any losses from total profit.
 
 3 - Work out the average of the changes in 'Profits/Losses'.
     i - Track the total changes from month to month.
+        a - set current month
+        b - set previous month (array index - 1)
+        c - create new array for monthly changes
+        d - minus previous month from current month
+        e - push value to new array
+
     ii - (Total/(Number of months - 1))
 
 4 - Find out the greatest increase in 'Profit/Losses'. Stating the date and difference in amounts.

@@ -105,8 +105,30 @@ for (let i = 0; i < finances.length; i++) {
 }
 
 /*****
+ * Calculation to work out the average changes in profit/loss.
+*****/
+
+var difference = 0; //Initialise variable to ba 0.
+
+for (let i = 0; i < finances.length; i++) {
+  var balance = finances[i][1]; // Initialise balance to get current month's value.
+
+  // Use a for loop to go through the array, missing the first month out.
+  if (i > 0) {
+    var previousBalance = finances[i - 1][1]; // Set variable to target the previous month
+    var monthlyDifference = balance - previousBalance; // Set variable to calculate the current balance - previous months balance.
+    difference += monthlyDifference; // Add the differences to the difference variable after each loop.
+  }
+}
+
+var average = difference / (totalMonths - 1) // Calculation for the average profit/loss.
+
+
+
+/*****
  * Output of final analysis.
 *****/
 console.log("Financial Analysis\n----------------");
 console.log(`Total months: ${totalMonths}`);
 console.log(`Total: $${profit}`);
+console.log('Average Change: $' + average.toFixed(2)); //Set to 2 decimal places using the 'toFixed(2)' method. 
