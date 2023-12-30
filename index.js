@@ -87,13 +87,19 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+
 /*****
  * Calculation to work out how many months there are.
 *****/
+//Create variable to show total months using the arrays length.
+let totalMonths = finances.length;
 
-let totalMonths; //Initialise total months variable.
-let months = 0; //Set months to start at 0
-for (let i = 0; i <= finances.length; i++) {
-  totalMonths = months++;
-}
+/*****
+ * Calculation to work out the net total of Profit/Losses.
+*****/
+
+/*****
+ * Output of final analysis.
+*****/
+console.log("Financial Analysis\n----------------");
 console.log(`Total months: ${totalMonths}`);
